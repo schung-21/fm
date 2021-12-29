@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Link](https://github.com/schung-21/fm/tree/main/nft-preview-card-component)
-- Live Site URL: [](https://schung-21.github.io/fm/nft-preview-card-component/)
+- Solution URL: ![](https://github.com/schung-21/fm/tree/main/nft-preview-card-component)
+- Live Site URL: ![](https://schung-21.github.io/fm/nft-preview-card-component/)
 
 ### Built with
 
