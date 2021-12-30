@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --pri-blue: hsl(238, 29%, 16%);
+    --pri-red: hsl(14, 88%, 65%);
+    --sec-blue: hsl(237, 12%, 33%);
+    --sec-grey: hsl(240, 6%, 50%);
+}
+
+* {
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--sec-blue);
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    height: 100vh;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 70%; height: 70%;
+    border-radius: 1.5rem;
+    filter: drop-shadow(0 2rem 2rem rgba(0, 0, 0, 0.4));
+    overflow: hidden;
+}
+
+.illustration img {position: absolute;}
+
+.background {top: -50%; left: -58%;}
+.illust {top: 15%; left: -9%;}
+
+.box {
+    position: absolute;
+    top: 40%; left: 8%;
+    filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.3));
+}
+
+.mobile {display: none;}
+
+.faq {
+    width: 50%;
+    padding: 5rem 7rem 5rem 0;
+}
+
+h1 {
+    margin-bottom: 3rem;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.question:hover p {
+    color: var(--pri-red);
+    transition: 0.25s ease-in-out;
+}
+
+.answer {
+    font-size: 12px;
+    display: none;
+    color: var(--sec-grey);
+}
+
+.active p {font-weight: 700;}
+.active img {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+hr {
+    border: 0.5px solid hsl(240, 5%, 91%);
+    margin: 1rem 0;
+}
+
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 1rem; left: 0; right: 0;
+}
+.attribution a {
+    color: var(--pri-blue); 
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    main {
+        overflow: visible;
+        flex-direction: column;
+        width: 90%; height: auto;
+        margin-top: 2rem;
+    }
+
+    .mobile {display: block;}
+    .desktop {display: none;}
+
+    .illustration img {position: absolute;}
+
+    .background {
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+    }
+    .illust {
+        top: -20%; left: 50%;
+        transform: translateX(-50%);
+        width: 240px;
+    }
+
+    .faq {
+        width: 100%;
+        padding: 5rem 2rem 2rem;
+    }
+
+    h1 {
+        margin: 3rem auto 2rem; 
+        text-align: center;
+    }
+
+    .question p {font-size: 14px;}
+}
