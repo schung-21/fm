@@ -29,8 +29,6 @@ Users should be able to:
 - Solution URL: [https://github.com/schung-21/fm/tree/main/article-preview-component](https://github.com/schung-21/fm/tree/main/article-preview-component)
 - Live Site URL: [https://schung-21.github.io/fm/article-preview-component/](https://schung-21.github.io/fm/article-preview-component/)
 
-## My process
-
 ### Built with
 
 - Semantic HTML5 markup
