@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://github.com/schung-21/fm/tree/main/stats-preview-card](https://github.com/schung-21/fm/tree/main/stats-preview-card)
 - Live Site URL: [https://schung-21.github.io/fm/stats-preview-card/](https://schung-21.github.io/fm/stats-preview-card/)
 
 ### Built with
