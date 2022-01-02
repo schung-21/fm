@@ -2,79 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://kit.fontawesome.com/35d2f9faef.js" crossorigin="anonymous"></script>
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
   
   <title>Frontend Mentor | Time tracking dashboard</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <main>
+    <div class="menu">
+      <div class="profile">
+        <img src="images/image-jeremy.png" alt="Jeremy Robsom profile picture">
+        <div><p>Report for</p>
+        <h1>Jeremy Robson</h1></div>
+      </div>
+      <ul>
+        <li class="daily">Daily</li>
+        <li class="weekly">Weekly</li>
+        <li class="monthly">Monthly</li>
+      </ul>
+    </div>
 
-  Report for
-  Jeremy Robson
 
-  Daily
-  Weekly
-  Monthly
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+    <div class="work bg">
+      <img src="images/icon-work.svg" alt="work icon">
+      <div class="stat">
+        <div class="title">
+          <p class="card-title">Work</p>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="hours">
+          <h2 class="current"></h2>
+          <p class="previous"></p>
+        </div>
+      </div>
+    </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+    <div class="play bg">
+      <img src="images/icon-play.svg" alt="play icon">
+      <div class="stat">
+        <div class="title">
+          <p class="card-title">Play</p>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="hours">
+          <h2 class="current"></h2>
+          <p class="previous"></p>
+        </div>
+      </div>
+    </div>
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+    <div class="study bg">
+      <img src="images/icon-study.svg" alt="study icon">
+      <div class="stat">
+        <div class="title">
+          <p class="card-title">Study</p>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="hours">
+          <h2 class="current"></h2>
+          <p class="previous"></p>
+        </div>
+      </div>
+    </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+    <div class="exercise bg">
+      <img src="images/icon-exercise.svg" alt="exercise icon">
+      <div class="stat">
+        <div class="title">
+          <p class="card-title">Exercise</p>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="hours">
+          <h2 class="current"></h2>
+          <p class="previous"></p>
+        </div>
+      </div>
+    </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+    <div class="social bg">
+      <img src="images/icon-social.svg" alt="social icon">
+      <div class="stat">
+        <div class="title">
+          <p class="card-title">Social</p>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="hours">
+          <h2 class="current"></h2>
+          <p class="previous"></p>
+        </div>
+      </div>
+    </div>
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <div class="self bg">
+      <img src="images/icon-self-care.svg" alt="self-care icon">
+      <div class="stat">
+        <div class="title">
+          <p class="card-title">Self Care</p>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="hours">
+          <h2 class="current"></h2>
+          <p class="previous"></p>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
