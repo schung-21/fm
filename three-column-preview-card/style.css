@@ -67,7 +67,6 @@ button {
 #luxury button:hover {
     background: transparent;
     color: var(--gray);
-    border: 1px solid;
 }
 
 @media (max-width: 750px) {
