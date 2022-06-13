@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+</head>
+<body>
+
+  <main>
+    <img id="logo" src="images/logo.svg" alt="Base Apparel">
+    <div id="image"></div>
+    <h1>We're<br><strong>Coming Soon</strong></h1>
+    <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+    <form name="form" onsubmit="validate(event)">
+      <input type="text" name="email" placeholder="Email Address">
+      <img id="error-icon" src="images/icon-error.svg" alt="error icon">
+      <input type="submit" value="">
+    </form>
+    <span id="error-msg"></span>
+  </main>
+
+  <script>
+    function validate(e) {
+      e.preventDefault();
+      let val = document.forms['form']['email'].value;
+      let re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+      if (!val.match(re)) {
+        document.querySelector('input[type="text"]').style.border = '1px solid hsl(0, 93%, 68%)';
+        document.getElementById('error-icon').style.display = 'block';
+        document.getElementById('error-msg').innerHTML = "Please provide a valid email";
+      } else {
+        document.querySelector('input[type="text"]').style.border = '1px solid hsla(0, 36%, 70%, .5)';
+        document.getElementById('error-icon').style.display = 'none';
+        document.getElementById('error-msg').innerHTML = "";
+        return true;
+      }
+    }
+  </script>
+
+</body>
+</html>
