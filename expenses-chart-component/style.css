@@ -58,7 +58,8 @@ hr {
 .stats {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    margin-bottom: .5rem;
 }
 
 .stats p {
@@ -68,3 +69,12 @@ hr {
 .total h1 {font-size: 2.5rem;}
 
 .last {text-align: right;}
+
+@media (max-width: 500px) {
+    body {width: 325px}
+    main > h1 {font-size: 1.4rem;}
+    .total h1 {font-size: 1.7rem;}
+    hr {border: 1px solid var(--cream);}
+
+    #chart {height: 200;}
+}
