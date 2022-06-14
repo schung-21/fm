@@ -1,5 +1,6 @@
 import Data from './data.json' assert {type: 'json'};
 
+const Chart = require('chart.js');
 
 let labels = [];
 let amount = [];
@@ -55,7 +56,6 @@ const config = {
         }
     }
 };
-
 
 const spending = new Chart(document.getElementById('chart'), config);
 
