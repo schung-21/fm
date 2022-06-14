@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --blue-dark: hsl(234, 12%, 34%);
+    --blue-gray: hsl(229, 6%, 66%);
+    --light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--blue-dark);
+}
+
+body {
+    height: 100vh;
+    background: var(--light-gray);
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--blue-gray);
+    font-size: 15px;
+}
+
+.desc {
+    margin: 4rem auto 3rem;
+    width: 38%;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template: repeat(4, 8rem) / repeat(3, 1fr);
+    margin: 0 10rem;
+}
+
+.cards div {
+    position: relative;
+    background: white;
+    margin: .5rem;
+    padding: 2rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 .75rem 1rem rgba(81, 138, 204, 0.15);
+}
+
+hr {
+    position: absolute;
+    width: 100%; 
+    top: 0; left: 0;
+    border: 2px solid;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+}
+
+div > p {
+    font-size: 14px;
+    line-height: 1.5rem;
+}
+
+img {
+    position: absolute;
+    bottom: 2rem; right: 2rem;
+}
+
+#supervisor {grid-area: 2 / 1 / 4 / 2;}
+#supervisor hr {border-color: hsl(180, 62%, 55%);}
+
+#team {grid-area: 1 / 2 / 3 / 3;}
+#team hr {border-color: hsl(0, 78%, 62%);}
+
+#karma {grid-area: 3 / 2 / 5 / 3;}
+#karma hr {border-color: hsl(34, 97%, 64%);}
+
+#calculator {grid-area: 2 / 3 / 4 / 4;}
+#calculator hr {border-color: hsl(212, 86%, 64%);}
+
+@media (max-width: 600px) {
+    body {
+        height: auto;
+        overflow: auto;
+    }
+
+    .desc {
+        margin: 5rem 2rem;
+        width: auto;
+    }
+
+    h1 {font-size: 1.5rem;}
+
+    .cards {
+        grid-template: repeat(4, 17rem) / 1fr;
+        margin: 1.25rem;
+    }
+
+    #supervisor {grid-area: 1 / 1 / 2 / 2;}
+    #team {grid-area: 2 / 1 / 3 / 2;}
+    #karma {grid-area: 3 / 1 / 4 / 2;}
+    #calculator {grid-area: 4 / 1 / 5 / 2;}
+}
