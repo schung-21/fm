@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+    --red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --brown-dark: hsl(25, 47%, 15%);
+    --brown-med: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --pale: hsl(33, 100%, 98%);
+}
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    color: var(--brown-dark);
+    font-family: 'DM Sans', sans-serif;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--cream);
+}
+
+body {width: 450px;}
+
+header {
+    background: url('images/logo.svg') no-repeat 90%, var(--red);
+    margin-bottom: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+}
+
+header h1, header p {color: var(--pale);}
+
+h1 {font-size: 24px;}
+
+header p {
+    margin-bottom: .5rem;
+    font-size: 13px;
+}
+
+main {
+    background: var(--pale);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+}
+
+main > h1 {margin-bottom: 2rem;}
+
+hr {
+    margin: 1.5rem 0;
+    border: .75px solid var(--cream);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats p {
+    font-size: 13px;
+    color: var(--brown-med);
+}
+.total h1 {font-size: 2.5rem;}
+
+.last {text-align: right;}
