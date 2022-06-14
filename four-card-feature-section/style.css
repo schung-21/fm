@@ -25,6 +25,8 @@ h1 {
     margin-bottom: 1rem;
 }
 
+h1 strong {font-weight: 600;}
+
 p {
     color: var(--blue-gray);
     font-size: 15px;
