@@ -89,6 +89,9 @@ li.html {
 } li.js {
     background: rgba(144, 238, 144, 0.25);
     color: darkgreen;
+} li.api {
+    background: rgba(128, 128, 128, 0.25);
+    color: gray;
 }
 
 .date {text-align: right;}
