@@ -90,7 +90,7 @@ li.html {
     background: rgba(144, 238, 144, 0.25);
     color: darkgreen;
 } li.api {
-    background: rgba(128, 128, 128, 0.25);
+    background: rgba(128, 128, 128, .1);
     color: gray;
 }
 
