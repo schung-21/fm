@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Blogr</title>
+</head>
+<body>
+  <header>
+    <div class="top">
+      <img src="images/logo.svg" alt="Blogr">
+
+      <input id="menu" type="checkbox">
+      <label for="menu"></label>
+
+      <nav>
+        <input id="product" type="checkbox">
+        <label for="product">Product</label>
+
+        <div class="submenu product">
+          <a href="#null">Overview</a>
+          <a href="#null">Pricing</a>
+          <a href="#null">Marketplace</a>
+          <a href="#null">Features</a>
+          <a href="#null">Integrations</a>
+        </div>
+
+        <input id="company" type="checkbox">
+        <label for="company">Company</label>
+
+        <div class="submenu company">
+          <a href="#null">About</a>
+          <a href="#null">Team</a>
+          <a href="#null">Blog</a>
+          <a href="#null">Careers</a>
+        </div>
+        
+        <input id="connect" type="checkbox">
+        <label for="connect">Connect</label>
+
+        <div class="submenu connect">
+          <a href="#null">Contact</a>
+          <a href="#null">Newsletter</a>
+          <a href="#null">LinkedIn</a>
+        </div>
+
+        <hr>
+
+        <a href="#null">Login</a>
+        <button>Sign Up</button>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <h1>A modern publishing platform</h1>
+      <p>Grow your audience and build your online brand</p>
+      <button id="start">Start for Free</button>
+      <button id="learn">Learn More</button>
+    </div>
+  </header>
+
+  <main>
+    <h2>Designed for the future</h2>
+    <section class="editor">
+      <div id="editor"></div>
+      <div class="desc">
+        <h3>Introducing an extensible editor</h3>
+        <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
+        <h3>Robust content management</h3>
+        <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+      </div>
+    </section>
+
+    <section class="dark">
+      <img src="images/illustration-phones.svg" alt="Phones">
+      <h2>State of the Art Infrastructure</h2>
+      <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+    </section>
+
+    <section class="laptop">
+      <div id="laptop"></div>
+      <div class="desc">
+        <h3>Free, open, simple</h3>
+        <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+        <h3>Powerful tooling</h3>
+        <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="images/logo.svg" alt="Blogr">
+    <div>
+      <strong>Product</strong>
+      <a href="#null">Overview</a>
+      <a href="#null">Pricing</a>
+      <a href="#null">Marketplace</a>
+      <a href="#null">Features</a>
+      <a href="#null">Integrations</a>
+    </div>
+
+    <div>
+      <strong>Company</strong>
+      <a href="#null">About</a>
+      <a href="#null">Team</a>
+      <a href="#null">Blog</a>
+      <a href="#null">Careers</a>
+    </div>
+
+    <div>
+      <strong>Connect</strong>
+      <a href="#null">Contact</a>
+      <a href="#null">Newsletter</a>
+      <a href="#null">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        var scrollpos = localStorage.getItem('scrollpos');
+        if (scrollpos) window.scrollTo(0, scrollpos);
+    });
+
+    window.onbeforeunload = function(e) {
+        localStorage.setItem('scrollpos', window.scrollY);
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    --red: hsl(356, 100%, 66%);
+    --red-light: hsl(355, 100%, 74%);
+    --blue-dark: hsl(208, 49%, 24%);
+    --blue-gray: hsl(240, 2%, 79%);
+    --body-copy: hsl(207, 13%, 34%);
+    --black: hsl(240, 10%, 16%);
+}
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+h1, button {font-family: 'Ubuntu', sans-serif;}
+
+h1, h2, h3 {
+    color: var(--blue-dark);
+}
+
+a {text-decoration: none;}
+
+
+
+/* HEADER */
+
+header {
+    padding: 4rem 1.5rem;
+    color: white;
+    text-align: center;
+    background: url('images/bg-pattern-intro-mobile.svg') no-repeat 35% 35%, linear-gradient(155deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    border-radius: 0 0 0 6rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top img {width: 4.5rem;}
+
+label[for="menu"] {
+    width: 2rem; height: 1.5rem;
+    background: url('images/icon-hamburger.svg') center no-repeat;
+}
+
+#menu, nav > input, nav, .submenu {display: none;}
+#menu:checked ~ label {
+    background: url('images/icon-close.svg') center no-repeat;
+}
+#menu:checked ~ nav {
+    position: absolute;
+    top: 8rem; left: 2rem; right: 2rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1.5rem;
+    background: white;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 2rem hsla(240, 10%, 16%, .2);
+}
+
+nav > label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+nav > label::after {
+    content: '';
+    display: block;
+    width: 1rem; height: .5rem;
+    background: url('images/icon-arrow-dark.svg') center no-repeat;
+    transition: all .25s;
+}
+
+#product:checked ~ .submenu.product {display: flex;}
+#company:checked ~ .submenu.company {display: flex;}
+#connect:checked ~ .submenu.connect {display: flex;}
+
+nav input:checked + label {color: hsl(208, 49%, 24%, .7);}
+nav input:checked + label::after {transform: rotate(180deg);}
+
+.submenu {
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+    background: hsl(240, 2%, 79%, .3);
+    border-radius: .5rem;
+}
+
+.submenu a {
+    color: hsl(208, 49%, 24%, .7);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav hr {
+    width: 100%;
+    border: .5px solid hsl(240, 2%, 79%, .5);
+}
+
+nav > a {
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+nav button {
+    padding: .8rem 2rem;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    border: 0;
+    border-radius: 2rem;
+}
+
+.hero {
+    margin: 6rem 1rem;
+}
+
+.hero h1 {
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
+
+.hero p {
+    margin: auto 1rem;
+    opacity: .75;
+}
+
+#start, #learn {
+    margin: 3rem .25rem 0;
+    padding: .75rem 1rem;
+    font-weight: 700;
+    border-radius: 3rem;
+}
+
+#start {
+    color: var(--red);
+    background: white;
+    border: 0;
+}
+
+#learn {
+    color: white;
+    background: transparent;
+    border: 1px solid;
+}
+
+
+/* MAIN */
+
+main {text-align: center;}
+
+main h2 {
+    font-size: 1.6rem;
+    margin: 5rem auto 2rem;
+}
+
+main section {
+    margin: 5rem 2.5rem;
+}
+
+#editor {
+    width: 100%; height: 19rem;
+    background: url('images/illustration-editor-mobile.svg') center/cover no-repeat;
+}
+
+main h3 {
+    font-size: 1.6rem;
+    margin: 3rem auto 1rem;
+}
+
+main p {
+    color: var(--body-copy);
+    line-height: 1.75rem;
+}
+
+section.dark {
+    position: relative;
+    padding: 7rem 2.5rem; margin: 16rem 0 0;
+    width: 100%;
+    background: url('images/bg-pattern-circles.svg') no-repeat 50% -1200%/150%, linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    border-radius: 0 6rem;
+}
+
+section.dark img {
+    position: absolute;
+    top: -12rem; left: 0;
+    width: 100%;
+}
+
+section.dark h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+section.dark p {
+    color: white;
+    opacity: .75;
+}
+
+#laptop {
+    width: 100%; height: 20rem;
+    background: url('images/illustration-laptop-mobile.svg') center/cover no-repeat;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem;
+    background: var(--black);
+    text-align: center;
+    border-radius: 0 6rem 0 0;
+}
+
+footer img {margin-bottom: 2rem;}
+
+footer div {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+
+footer strong {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: var(--blue-gray);
+}
+
+
+
+@media (min-width: 800px) {
+
+    /* HEADER */
+
+    header {
+        background: url('images/bg-pattern-intro-desktop.svg') 20% 50% no-repeat, linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    }
+
+    .top {
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    label[for="menu"] {display: none;}
+
+    nav > label, nav > a {
+        color: white;
+        opacity: .75;
+        transition: all .25s;
+    }
+
+    nav > label::after {
+        background: url('images/icon-arrow-light.svg') center no-repeat;
+    }
+
+    nav input:checked + label {
+        color: white;
+        text-decoration: underline;
+        opacity: 1;
+    }
+
+    .submenu {
+        position: absolute;
+        align-items: flex-start;
+        top: 7rem;
+        width: 10rem;
+        background: white;
+        box-shadow: 0 1rem 2rem hsl(240, 10%, 16%, .3);
+    }
+
+    .submenu a {
+        font-size: 1rem;
+        transition: all .25s;
+    }
+
+    .submenu a:hover {
+        color: var(--blue-dark);
+    }
+
+    .submenu.product {left: 18rem;}
+    .submenu.company {left: 25rem;}
+    .submenu.connect {left: 32rem;}
+
+    nav hr {
+        border: 0;
+        width: 25rem;
+    }
+
+    nav > button {
+        color: var(--red);
+        background: white;
+        transition: all .25s;
+    }
+
+    nav > button:hover {
+        color: white;
+        background: rgba(255, 255, 255, .25);
+    }
+
+    .hero h1 {font-size: 3rem;}
+
+    #start:hover {
+        color: white;
+        background: rgba(255, 255, 255, .25);
+    }
+
+    #learn:hover {
+        color: var(--red-light);
+        background: white;
+    }
+
+
+
+    /* MAIN */
+
+    body {overflow-x: hidden;}
+
+    main > h2 {
+        margin: 10rem auto -12rem;
+        font-size: 2.5rem;
+    }
+
+    main section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        text-align: left;
+    }
+
+    .desc {width: 40%;}
+
+    .editor {
+        flex-flow: row-reverse nowrap;
+    }
+
+    #editor {
+        margin-right: -25rem;
+        width: 70%; height: 56rem;
+        background: url('images/illustration-editor-desktop.svg') center no-repeat;
+    }
+
+    section.dark {
+        display: block;
+        margin: 0; padding: 5rem 10rem 5rem 45rem;
+        background: url('images/bg-pattern-circles.svg') -35% 80%/60% no-repeat, linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    }
+
+    section.dark h2 {
+        margin: 0 auto 2rem;
+    }
+
+    section.dark img {
+        width: 38%;
+        top: -8rem; left: 5rem;
+    }
+
+    #laptop {
+        margin-left: -24rem;
+        height: 50rem;
+        background: url('images/illustration-laptop-desktop.svg') center no-repeat;
+    }
+
+    .laptop {
+        gap: 0;
+    }
+
+    .laptop .desc {
+        margin-right: 5rem;
+        width: 50%;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        gap: 10rem;
+    }
+
+    footer div {
+        align-items: flex-start;
+    }
+
+    footer strong {
+        margin-bottom: 1.5rem;
+    }
+
+    footer div a:hover {
+        transition: all .25s;
+        text-decoration: underline;
+    }
+}
