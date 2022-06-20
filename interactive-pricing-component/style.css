@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    color: hsl(225, 20%, 60%);
+    font-family: 'Manrope', sans-serif;
+}
+
+:root {
+    --full: hsl(174, 77%, 80%);
+    --empty: hsl(224, 65%, 95%);
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background: url('images/bg-pattern.svg') top no-repeat, hsl(230, 100%, 99%);
+}
+
+header {
+    padding: 5rem 0;
+    text-align: center;
+    background: url('images/pattern-circles.svg') center no-repeat;
+}
+
+h1 {color: hsl(227, 35%, 25%);}
+header h1 {margin-bottom: .5rem;}
+p {font-size: 15px;}
+
+
+
+main {
+    width: 40%;
+    background: white;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 1rem hsl(224, 65%, 95%);
+}
+
+.price, .billing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    padding: 3rem;
+}
+
+.price h1 {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.price h1::before {content: '$';}
+
+.price h1::after {
+    content: '/ month';
+    margin-left: .5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: hsl(225, 20%, 60%);
+}
+
+#pageview {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#pageview::after {content: ' Pageviews';}
+
+
+
+
+.slider {margin: auto 3rem;}
+#slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: .5rem;
+    background: linear-gradient(to right, var(--full) 0%, var(--full) 50%, var(--empty) 50%, var(--empty) 100%);
+    border-radius: 1rem;
+    outline: none;
+    transition: all .25s;
+  }
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url('images/icon-slider.svg') center no-repeat, hsl(174, 86%, 45%);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem var(--full);
+}
+
+#slider::-moz-range-thumb {
+    width: 2rem;
+    height: 2rem;
+    background: hsl(174, 86%, 45%);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem var(--full);
+}
+
+
+.billing {
+    position: relative;
+    justify-content: center;
+}
+
+.switch input {display: none;}
+.switch {
+    display: block;
+    width: 3.25rem;
+    height: 1.5rem;
+}
+
+#switch {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 3rem; height: 100%;
+    background: hsl(223, 50%, 87%);
+    border-radius: 1rem;
+    transition: all .25s;
+}
+
+#switch::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    margin: .25rem;
+    background: white;
+    width: 1rem; height: 1rem;
+    border-radius: 50%;
+    transition: all .25s;
+}
+
+#switch:hover, 
+#toggle:checked ~ #switch {background: hsl(174, 77%, 80%);}
+#toggle:checked ~ #switch::after {transform: translateX(1.5rem);}
+
+#discount::after {
+    content: '25% discount';
+    position: absolute;
+    right: 3.5rem;
+    padding: .1rem .4rem; 
+    color: hsl(15, 100%, 70%);
+    font-size: 12px;
+    background: hsl(14, 92%, 95%);
+    border-radius: 1rem;
+}
+
+
+hr {
+    border: .5px solid hsl(224, 65%, 95%);
+}
+
+.start {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.start ul {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    list-style: inside url('images/icon-check.svg');
+}
+
+.start li::before {
+    content: '';
+    display: inline-block;
+    height: 100%; width: .75rem;
+}
+
+.start button {
+    padding: .8rem 3.25rem;
+    color: hsl(226, 100%, 87%);
+    background: hsl(227, 35%, 25%);
+    border: 0;
+    border-radius: 5rem;
+    transition: color .25s;
+}
+
+.start button:hover {
+    color: white;
+}
+
+@media (max-width: 800px) {
+    body {
+        background: url('images/bg-pattern.svg') left top no-repeat, hsl(230, 100%, 99%);
+    }
+
+    p, li {font-size: 13px;}
+    header h1 {font-size: 1.25rem;}
+    main {
+        position: relative;
+        width: 90%;
+    }
+
+    .price {
+        padding: 3rem 1rem 1rem;
+    }
+
+    .price {
+        flex-flow: column nowrap;
+        gap: 6rem;
+    }
+
+    .price h1 {font-size: 2rem;}
+
+    .slider {
+        position: absolute;
+        top: 6.5rem; left: -1.5rem; right: -1.5rem;
+    }
+
+    .billing {
+        padding: 1rem 1rem 2.5rem;
+        justify-content: center;
+    }
+
+    .billing p {font-size: 12px;}
+
+    #discount::after {
+        content: '-25%';
+        right: .5rem;
+    }
+
+    .start {
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .start ul {align-items: center;}
+}
