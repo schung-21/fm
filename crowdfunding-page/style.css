@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+    --cyan: hsl(176, 50%, 47%);
+    --cyan-dark: hsl(176, 72%, 28%);
+    --gray: hsl(0, 0%, 48%);
+    --bg: rgb(250, 250, 250);
+    --border: .5px solid hsl(0, 0%, 48%, .5);
+}
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Commissioner', sans-serif;
+}
+
+h1 {font-size: 2rem;}
+a {text-decoration: none;}
+p {color: var(--gray);}
+
+button, input[type='submit'] {
+    padding: 1rem 2rem;
+    color: white;
+    font-weight: 500;
+    background: var(--cyan);
+    border: 0;
+    border-radius: 3rem;
+    transition: background-color .25s;
+}
+
+button:hover {background: var(--cyan-dark);}
+
+body {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background: var(--bg);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3rem 10rem;
+    width: 100%; height: 25rem;
+    background: linear-gradient(rgba(0,0,0,0.5), transparent), url('images/image-hero-desktop.jpg') center/cover no-repeat;
+}
+
+header input, header label {display: none;}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {color: white;}
+nav a:hover {text-decoration: underline;}
+
+
+
+main {
+    position: absolute;
+    top: 20rem;
+    width: 55%;
+}
+
+main section {
+    margin-bottom: 1.5rem;
+    padding: 3rem;
+    background: white;
+    border: .5px solid hsl(0, 0%, 48%, .2);
+    border-radius: .5rem;
+}
+
+.intro {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#mastercraft {
+    position: absolute;
+    top: -28px;
+}
+
+.intro h1 {margin: 1rem auto;}
+
+.intro div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+#back {
+    padding: 1.25rem 2.75rem;
+    font-size: 16px;
+}
+
+#bookmark {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: var(--gray);
+    background: rgb(244, 244, 244);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#bookmark span {
+    padding: 0 1.5rem 0 1rem;
+}
+
+#bookmark:hover svg circle {
+    fill: var(--gray);
+}
+
+.marked svg circle {fill: hsl(176, 72%, 28%);}
+.marked svg path {fill: white;}
+.marked span {color: var(--cyan-dark);}
+.marked span::after {content: 'ed';}
+
+
+
+.stats {
+    display: flex;
+    align-items: center;
+}
+
+.stats div {flex: 1 0 auto;}
+
+.stats h1 {margin-bottom: .5rem;}
+
+.progress .bar {
+    position: relative;
+    margin-top: 2.5rem;
+    width: 100%; height: 14px;
+    background: rgb(244, 244, 244);
+    border-radius: 1rem;
+}
+
+.bar::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 80%; height: 100%;
+    background: var(--cyan);
+    border-radius: 1rem;
+}
+
+
+
+.detail {margin-bottom: 8rem;}
+
+.detail h2 {
+    margin-bottom: 2rem;
+}
+
+.detail p {
+    margin-bottom: 2rem;
+    line-height: 2rem;
+}
+
+.reward {
+    margin-top: 1.5rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .35rem;
+}
+
+.reward div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reward .title p {
+    margin: 0;
+    color: var(--cyan);
+    font-weight: 500;
+}
+
+.reward > p {
+    margin: 1.25rem 0;
+}
+
+.reward .stock h1 {
+    display: flex;
+    align-items: center;
+}
+
+.reward .stock h1::after, 
+#modal label .title h2::after {
+    content: 'left';
+    margin-left: .5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.soldout {
+    opacity: .5;
+    pointer-events: none;
+}
+button:disabled {background: var(--gray);}
+
+
+
+#modal, #thank {
+    display: none;
+    position: fixed;
+    top: 3rem; bottom: 3rem;
+    padding: 3rem 2.5rem;
+    width: 55%;
+    background: white;
+    border-radius: .5rem;
+    box-shadow: 0 0 0 50vw rgba(0,0,0,.5);
+    z-index: 99;
+    overflow: scroll;
+}
+
+#modal #close {
+    display: block;
+    position: absolute;
+    top: 2rem; right: 2rem;
+}
+
+/* #modal h2 {} */
+
+#modal p {
+    margin: 1.5rem 0 2rem;
+    line-height: 2rem;
+}
+
+#modal label {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .35rem;
+}
+
+#modal label .radio {
+    position: relative;
+    display: block;
+    margin-right: 1.5rem;
+    width: 1.5rem; height: 1.5rem;
+    border: var(--border);
+    border-radius: 50%;
+}
+
+#modal label:hover h3 {
+    color: var(--cyan);
+    transition: all .25s;
+}
+
+#modal label:hover .radio {
+    border: 1px solid var(--cyan);
+    transition: all .25s;
+}
+
+#modal label input[type='radio'] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#modal label input:checked ~ .radio::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: .3rem; bottom: .3rem; left: .3rem; right: .3rem;
+    background: var(--cyan);
+    border-radius: 50%;
+}
+
+#modal label .desc {
+    width: 90%;
+}
+
+#modal label .title, 
+#modal label .desc > h3 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#modal label .title p {
+    color: var(--cyan);
+    font-weight: 500;
+}
+
+#modal label .title h2 {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+#modal label .desc > p {
+    line-height: 2rem;
+}
+
+#pledge:checked ~ .selected.pledge,
+#bamboo:checked ~ .selected.bamboo,
+#black:checked ~ .selected.black {display: flex;}
+
+#modal label .selected {
+    display: none;
+    align-items: center;
+    margin: 1rem -2rem 0;
+    padding: 1rem 2rem 0;
+    gap: 1rem;
+    width: 120%;
+    border-top: var(--border);
+}
+
+.selected input[type='number'] {
+    position: relative;
+    margin-left: auto;
+    padding: .75rem 1rem .75rem 2rem;
+    width: 6rem;
+    font-weight: 700;
+    border: var(--border);
+    border-radius: 5rem;
+}
+
+#thank {
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    top: 10rem; bottom: 10rem;
+    padding: 2rem 3rem;
+    width: 40%;
+}
+
+#thank img {
+    margin-bottom: 2rem;
+    width: 20%;
+}
+
+#thank p {
+    margin-bottom: 1.5rem;
+    line-height: 2rem;
+}
+
+
+
+
+
+
+@media (max-width: 800px) {
+    p {font-size: 14px;}
+    header {
+        padding: 2.5rem 2rem;
+        height: 18rem;
+        background: linear-gradient(rgba(0,0,0,0.5), transparent), url('images/image-hero-mobile.jpg') center/cover no-repeat;
+    }
+
+    header > img {z-index: 3;}
+
+    label[for="menu"] {
+        display: block;
+        width: 1rem; height: 1rem;
+        background: url('images/icon-hamburger.svg') center no-repeat;
+        z-index: 3;
+    }
+
+    header nav {display: none;}
+
+    #menu:checked ~ label {
+        background: url('images/icon-close-menu.svg') center no-repeat;
+    }
+
+    #menu:checked ~ nav {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0;
+        position: absolute;
+        top: 6rem; left: 1.5rem; right: 1.5rem;
+        background: white;
+        border-radius: .5rem;
+        z-index: 2;
+        box-shadow: 0 0 10rem 10rem hsl(0, 0%, 0%, .3);
+    }
+
+    nav a {
+        position: relative;
+        padding: 1.5rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: black;
+    }
+
+    nav a::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        border: .5px solid hsl(0, 0%, 48%, .2);
+    }
+
+    nav a:last-child::after {display: none;}
+
+
+
+    main {
+        top: 15rem;
+        width: 325px;
+    }
+
+    main section {padding: 2.5rem 1.5rem;}
+
+    .intro {text-align: center;}
+    .intro h1 {font-size: 1.5rem;}
+    .intro p {line-height: 1.5rem;}
+
+    #back {
+        padding: 1.25rem 2.5rem;
+        font-size: 15px;
+    }
+
+    #bookmark span {display: none;}
+
+    .stats {
+        flex-flow: column nowrap;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .detail {margin-bottom: 5rem;}
+
+    .detail h2 {font-size: 1.25rem;}
+    .detail p {line-height: 1.5rem;}
+
+    .reward div {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+
+    .reward .title h3 {font-size: 16px;}
+
+    .reward .title {gap: .25rem;}
+    .reward .stock {gap: 1.5rem;}
+
+
+
+    #modal {
+        top: 5rem; bottom: 5rem;
+        width: 90%;
+    }
+
+    #modal p, #modal label .desc p {
+        font-size: 14px;
+        line-height: 1.75rem;
+    }
+}
